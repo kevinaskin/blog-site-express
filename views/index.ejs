@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <script src="/javascripts/md5.min.js"></script>
+    <script src="/javascripts/camera.js"></script>
+    <script src="/javascripts/ascii.js"></script>
+</head>
+<body>
+<div id="container">
+
+    <div id="header">
+        <span onclick="location.href='/'">Kevinaskin.top</span>
+        <div class="nav-block"><a href="#">Piece</a></div>
+        <div class="nav-block"><a href="#">Blog</a></div>
+        <div class="nav-block"><a href="#">Photo</a></div>
+        <div class="nav-block"><a href="/about">About</a></div>
+
+        <div class="nav-login" id="regist">regist</div>
+        <div class="nav-login" id="login">login</div>
+        <div id="log-out-button">LOG OUT</div>
+
+    </div>
+    <pre id="ascii"></pre>
+    <div id="left-body">
+
+    </div>
+    <div id="mid-body">
+    </div>
+    <div id="right-body"></div>
+</div>
+
+<!--Login的弹出框-->
+<div id="loginalert" class="alertbox">
+    <h1 id="exit">_____________________close</h1>
+    <div class="inputbox">
+        <span>Loginname&nbsp;</span>
+        <input type="text" placeholder="" id="login-input">
+    </div>
+    <div class="inputbox">
+        <span>Password&nbsp;&nbsp;&nbsp;</span>
+        <input type="password" placeholder="" id="psd-input">
+    </div>
+    <div id="login-button">Send</div>
+</div>
+<!--ALERT_WORNING-->
+<div id="alertworning" class="alertbox">
+    <h1 id="exit-worning">_____________________close</h1>
+    <p id="worning-msg"></p>
+</div>
+<script src="/javascripts/index.js"></script>
+</body>
+</html>

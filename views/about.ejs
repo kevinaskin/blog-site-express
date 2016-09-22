@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link rel="stylesheet" href="/stylesheets/about.css">
+</head>
+<body>
+<div id="container">
+
+    <div id="header">
+        <span onclick="location.href='/'">Kevinaskin.top</span>
+        <div class="nav-block">Piece</div>
+        <div class="nav-block">Blog</div>
+        <div class="nav-block">Photo</div>
+        <div class="nav-block">About</div>
+
+        <div class="nav-login" id="regist">regist</div>
+        <div class="nav-login" id="login">login</div>
+        <div id="log-out-button">LOG OUT</div>
+    </div>
+    <div id="left-body">
+
+    </div>
+    <div id="mid-body">
+
+        <h1>@曾经的建筑民工在互联网行业继续当起了民工</h1>
+        <br>
+        <p>五年的建筑学本科毕业之后发现了理想和现实的差别</p>
+        <p>看到书柜里十多年前买的那本闪闪黄皮的PASCAL程序设计-习题与选解（新编）我决定开始程序猿的生涯...//听着好凄惨</p>
+        <p>现在，我是一名JavaScript程序猿，可以从事Web前端和Nodejs</p>
+        <br>
+        <div class="tag">JavaScript</div>
+        <div class="tag">Html5</div>
+        <div class="tag">Css3</div>
+        <div class="tag">Nodejs</div>
+        <div class="tag">jQuery</div>
+        <div class="tag">Nwjs</div>
+        <br><br>
+        <p>当然，如果有设计项目，我也是很乐意参与的</p>
+        <p>欢迎给我留言</p><br>
+        <div>
+            <span>&nbsp;(￣～￣)怎么称呼？&nbsp;&nbsp;</span><input id="nickname" type="text" placeholder="你的昵称?/*请输入少于32位*/">
+            <textarea id="msg-wall" placeholder="请在这里留言..."></textarea>
+            <button id="submit-msg"><span>提交</span></button>
+        </div>
+
+        <div id="msg-box">
+            <h2>留言板</h2>
+        </div>
+    </div>
+    <div id="right-body"></div>
+</div>
+
+<!--ALERT_WORNING-->
+<div id="alertworning" class="alertbox">
+    <h1 id="exit-worning">_____________________close</h1>
+    <p id="worning-msg"></p>
+</div>
+
+</body>
+<script charset="utf-8" src="/javascripts/about.js"></script>
+</html>
