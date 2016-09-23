@@ -58,6 +58,7 @@ app.use('/login', require('./routes/login'));
 app.use('/admin', require('./routes/admin'));
 app.use('/article-post', require('./routes/article-post'));
 app.use('/about', require('./routes/about'));
+app.use('/article',require('./routes/article'));
 
 
 // catch 404 and forward to error handler

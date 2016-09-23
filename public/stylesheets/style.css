@@ -44,6 +44,12 @@ a {
     border:.01rem solid gray;
     margin:.1rem;
 }
+.tag:hover{
+    background-color: #ccc;
+}
+.tag:active{
+    background-color: #111111;
+}
 input{
     font-size: 1rem;
     line-height: 1.2rem;
@@ -75,9 +81,18 @@ input{
     color:#ff93df;
 }
 #log-out-button{
+    margin-top: .3rem;
     opacity: 0;
     color:#ff93df;
+    background-color: #fff;
+    width: 8rem;
+    height:4rem;
+    text-align: center;
+    font-size: 1.5rem;
 }
-#log-out:hover #log-out-button{
-    opacity: 1;
+#username-block:hover  #log-out-button{
+    opacity: .9;
+}
+.clear{
+    clear:both;
 }

@@ -6,7 +6,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('about', {title: 'Kevinaskin.top'});
+    if(req.session.currentUser){
+        res.render('about', {title: 'Kevinaskin.top',regist:'regist',registdisplay:'none',login:req.session.currentUser,logindisplay:'none',usernamedisplay:'block',logoutdisplay:'block'});
+    }else{
+        res.render('about', {title: 'Kevinaskin.top',regist:'regist',registdisplay:'block',login:'login',logindisplay:'block',logoutdisplay:'none',usernamedisplay:'none'});
+    }
 });
 // POST
 router.post('/post', function (req, res, next) {

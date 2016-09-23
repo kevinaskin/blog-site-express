@@ -31,6 +31,7 @@
     };
     Main.prototype.addListeners = function () {
         var that = this;
+        //LOG OUT
         this._logoutBtn.onclick = function () {
             new kevinaskin.Ajax({
                 url: '/login/logout',
@@ -40,7 +41,7 @@
                 success: function (data) {
                     this._data = JSON.parse(data);
                     if (this._data.code == 0) {
-                        location.href = '/';
+                        location.reload();
                     }
                 },
                 fail: function (err) {
@@ -88,6 +89,8 @@
             }
         }
     };
+
+    //LOG IN
     Main.prototype.sendBtn = function () {
         var that = this;
         document.onkeypress = function (e) {
@@ -113,7 +116,8 @@
                                     location.href = '/admin';
                                     break;
                                 case 1:
-                                    location.href = '/personal';
+                                    // location.href = '/personal';
+                                    location.reload();
                                     break;
                                 case 0:
                                     that._worningmsg.innerHTML = this._data.msg;
