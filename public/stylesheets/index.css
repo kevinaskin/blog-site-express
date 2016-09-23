@@ -56,6 +56,9 @@ html{font-size: 15px;}body{margin:0;padding:0}
     cursor: crosshair;
     padding-bottom: 50px;font-family: "Microsoft JhengHei UI";
 }
+.alertbox span{
+   font-size: 1.5rem;
+}
 .alertbox h1:hover{
     color:#ff93df;
 }
