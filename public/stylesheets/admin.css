@@ -1,7 +1,34 @@
-#write-area{
+#mid-body{
+    margin-top: 1rem;
+}
+#article-title{
+    width:100%;
+    font-size: 1.2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+#article{
     font-family: Georgia;
-    font-size:2rem;
-    text-align: center;
-    width:1020px;
+    font-size:1.5rem;
+    width:100%;
+    height: 30rem;
     margin:0 auto;
+    resize: none;
+}
+.radio{
+    width:2rem;
+    height:1.5rem;
+}
+em{
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+}
+#btn-upload{
+    width:10rem;
+    height:2rem;
+    line-height: 1rem;
+    font-size: 1.1rem;
+    float:right;
+    margin-top: 1rem;
+    margin-right:-.4rem;
 }

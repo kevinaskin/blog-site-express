@@ -4,6 +4,8 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/ajax.js"></script>
 </head>
 <body>
 <div id="container">
@@ -14,11 +16,25 @@
         <div class="nav-block"><a href="#">Blog</a></div>
         <div class="nav-block"><a href="#">Photo</a></div>
         <div class="nav-block"><a href="/about">About</a></div>
+
+        <div class="nav-login" id="logout">log out</div>
     </div>
     <div id="left-body">
 
     </div>
     <div id="mid-body">
+        <h1>Title:</h1><br>
+        <input type="text" id="article-title"><br>
+        <h3>Tags:</h3>
+        <input type="radio" class="radio" name="article-type"><em>Piece</em>
+        <input type="radio" class="radio" name="article-type"><em>Blog</em>
+        <input type="radio" class="radio" name="article-type"><em>Photo</em>
+        <br>
+        <h3>Content:</h3>
+        <textarea id="article" cols="30" rows="10"></textarea>
+        <br>
+        <button id="btn-upload">Upload Article</button>
+
     </div>
     <div id="right-body"></div>
 </div>
@@ -29,5 +45,7 @@
     <p id="worning-msg"></p>
 </div>
 
+
+<script src="/javascripts/admin.js"></script>
 </body>
 </html>

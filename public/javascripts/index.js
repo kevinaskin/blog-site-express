@@ -2,52 +2,6 @@
  * Created by Kevinaskin on 2016/9/19.
  */
 (function () {
-    //封装ajax
-    function ajax(options) {
-        options = options || {};
-        options.type = (options.type || "GET").toUpperCase();
-        options.dataType = options.dataType || "json";
-        var params = formatParams(options.data);
-
-        if (window.XMLHttpRequest) {
-            var xhr = new XMLHttpRequest();
-        } else {
-
-            var xhr = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                var status = xhr.status;
-                if (status >= 200 && status < 300) {
-                    options.success && options.success(xhr.responseText, xhr.responseXML);
-                } else {
-                    options.fail && options.fail(status);
-                }
-            }
-        };
-
-        if (options.type == "GET") {
-            xhr.open("GET", options.url + "?" + params, true);
-            xhr.send(null);
-        } else if (options.type == "POST") {
-            xhr.open("POST", options.url, true);
-
-
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send(params);
-        }
-    }
-
-
-    function formatParams(data) {
-        var arr = [];
-        for (var name in data) {
-            arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
-        }
-        arr.push(("v=" + Math.random()).replace(".", ""));
-        return arr.join("&");
-    }
 
 
     //主函数
@@ -78,7 +32,7 @@
     Main.prototype.addListeners = function () {
         var that = this;
         this._logoutBtn.onclick = function () {
-            ajax({
+            new kevinaskin.Ajax({
                 url: '/login/logout',
                 type: 'POST',
                 data: {},
@@ -136,15 +90,20 @@
     };
     Main.prototype.sendBtn = function () {
         var that = this;
+        document.onkeypress = function (e) {
+            if(e.keyCode == 13){
+                that._sendBtn.onclick();
+            }
+        };
         this._sendBtn.onclick = function () {
             if (that._logininput.value) {
                 if (that._psdinput.value) {
-                    ajax({
+                    new kevinaskin.Ajax({
                         url: that._state,
                         type: 'POST',
                         data: {
                             username: that._logininput.value,
-                            password: md5(that._psdinput.value),
+                            password: md5(that._psdinput.value)
                         },
                         dataType: "json",
                         success: function (data) {

@@ -2,54 +2,7 @@
  * Created by Kevinaskin on 2016/9/22.
  */
 (function () {
-    //封装ajax
-    function ajax(options) {
-        options = options || {};
-        options.type = (options.type || "GET").toUpperCase();
-        options.dataType = options.dataType || "json";
-        var params = formatParams(options.data);
-
-        if (window.XMLHttpRequest) {
-            var xhr = new XMLHttpRequest();
-        } else {
-
-            var xhr = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                var status = xhr.status;
-                if (status >= 200 && status < 300) {
-                    options.success && options.success(xhr.responseText, xhr.responseXML);
-                } else {
-                    options.fail && options.fail(status);
-                }
-            }
-        };
-
-        if (options.type == "GET") {
-            xhr.open("GET", options.url + "?" + params, true);
-            xhr.send(null);
-        } else if (options.type == "POST") {
-            xhr.open("POST", options.url, true);
-
-
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-            xhr.send(params);
-        }
-    }
-
-
-    function formatParams(data) {
-        var arr = [];
-        for (var name in data) {
-            arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
-        }
-        arr.push(("v=" + Math.random()).replace(".", ""));
-        return arr.join("&");
-    }
-
-///////////////////////////////////////Main////////////////////////////////////////////////
+    var CONFIG = {MSG_LONGTH:10};
     function Main() {
         this.getElements();
         this.addEventListeners();
@@ -70,7 +23,7 @@
             if (that._msgwall.value) {
                 if (that._nickname.value) {
                     //alert(that._msgwall.value,that._nickname.value);
-                    ajax({
+                    new kevinaskin.Ajax({
                         url:'/about/post',
                         type:'POST',
                         data: {username:that._nickname.value,text:that._msgwall.value},
@@ -127,15 +80,14 @@
             }
             return time.join('');
         }
-        ajax({
+        new kevinaskin.Ajax({
             url:'/about/getmsg',
             type:'get',
             data: {},
             dataType: "json",
             success: function (data) {
                 this._data = JSON.parse(data);
-                for(var i = 0;i<this._data.length;i++){
-                    console.log(this._data[i]);
+                for(var i = this._data.length-1;i>=this._data.length-CONFIG.MSG_LONGTH;i--){
                     msgTextRender(this._data[i].username +"  说",
                         this._data[i].text,
                         timeParse(this._data[i].time)
