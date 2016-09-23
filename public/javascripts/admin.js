@@ -8,11 +8,22 @@
     }
 
     Main.prototype.getElements = function () {
+        this._container = document.getElementById('container');
+
         this._logout = document.getElementById('logout');
+        this._btnUpload = document.getElementById('btn-upload');
+        this._title = document.getElementById('article-title');
+        this._tags = document.getElementsByClassName('radio');
+        this._context = document.getElementById('article');
+
+        this._alertworning = document.getElementById('alertworning');
+        this._worningmsg = document.getElementById('worning-msg');
+        this._exitWorning = document.getElementById('exit-worning');
     };
 
     Main.prototype.addListeners = function () {
         var that = this;
+        //LOG OUT
         this._logout.onclick = function () {
             new kevinaskin.Ajax({
                 url: '/login/logout',
@@ -29,6 +40,31 @@
                     console.error(err);
                 }
             });
+        };
+        //Close worning
+        this._exitWorning.onclick = function () {
+            that._alertworning.style.display = 'none';
+            that._container.style.backgroundColor = "#fff";
+        };
+        //RADIO CHECKED
+        this._checkRadio = function (e) {
+            this._length = e.length;
+            for(var i =0;i<this._length;i++){
+                if(e[i].checked) return i;
+            }
+            return -1;
+        };
+        //UPLOAD
+        this._btnUpload.onclick = function () {
+            // console.log(that._title.value,that._context.value);
+            // console.log(that._checkRadio(that._tags)); //-1(haven't checked),0,1,2;
+            switch (that._checkRadio(that._tags)){
+                case -1:
+                    that._worningmsg.innerHTML = "你需要选择一个分类";
+                    that._alertworning.style.display = 'block';
+                    that._container.style.backgroundColor = "#666";
+                    break;
+            }
         }
     };
     

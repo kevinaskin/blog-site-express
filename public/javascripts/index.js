@@ -23,8 +23,10 @@
         this._psdinput = document.getElementById('psd-input');
 
         this._alertbox = document.getElementById('loginalert');
+
         this._alertworning = document.getElementById('alertworning');
         this._worningmsg = document.getElementById('worning-msg');
+
         this._sendBtn = document.getElementById('login-button');
         this._logoutBtn = document.getElementById('log-out-button');
 
@@ -85,6 +87,7 @@
                     that._logininput.value = '';
                     that._logininput.placeholder = 'Enter to login';
                     that._logininput.focus();
+                    that._state = '/login';
                 }
             }
         }
