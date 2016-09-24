@@ -5,6 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
     <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="stylesheet" href="/stylesheets/msgbox-list.css">
     <script src="/javascripts/ajax.js"></script>
 </head>
 <body>
@@ -26,18 +27,8 @@
         <a href="/admin/msgbox-list">Msgbox list</a><br>
     </div>
     <div id="mid-body">
-        <h1>Title:</h1><br>
-        <input type="text" id="article-title"><br>
-        <h3>Tags:</h3>
-        <input type="radio" class="radio" name="article-type"><em>Piece</em>
-        <input type="radio" class="radio" name="article-type"><em>Blog</em>
-        <input type="radio" class="radio" name="article-type"><em>Photo</em>
-        <br>
-        <h3>Content:</h3>
-        <textarea id="article" cols="30" rows="10"></textarea>
-        <br>
-        <button id="btn-upload">Upload Article</button>
-
+        <h1>Msgbox-List</h1>
+        <div id="msg-box"></div>
     </div>
     <div id="right-body"></div>
 </div>
@@ -49,6 +40,6 @@
 </div>
 
 
-<script src="/javascripts/admin.js"></script>
+<script src="/javascripts/msgbox-list.js"></script>
 </body>
 </html>

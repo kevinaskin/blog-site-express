@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 h1 {
@@ -17,7 +18,17 @@ a {
     text-decoration: none;
 }
 #left-body{
-    width:30%;float:left;margin-top: 5.33rem;
+    width:30%;float:left;margin-top: 5.33rem;padding-top: 8rem;
+}
+#left-body a{
+    color:#888;
+    display: block;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+#left-body a:hover{
+    color:#111;
 }
 #mid-body{
     width:40%;float:left;margin-top: 5.33rem;
@@ -64,7 +75,7 @@ input{
     width:20%;
 }
 #right-body{
-    width:30%;float:left;margin-top: 5.33rem;
+    width:30%;float:left;margin-top: 5.33rem;padding-top: 8rem;
 }
 
 

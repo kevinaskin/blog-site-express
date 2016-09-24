@@ -13,6 +13,14 @@ router.get('/', function (req, res, next) {
     }
 
 });
+router.get('/msgbox-list', function (req, res, next) {
+    if(req.session.currentUser == 'kevinaskin'){
+        res.render('msgbox-list',{title:'Welcome Kevinaskin'});
+    }else{
+        res.redirect('/');
+    }
+
+});
 
 
 module.exports = router;
