@@ -6,7 +6,11 @@
         this.getElements();
         this.addListeners();
     }
-
+    Main.prototype.alertFunc = function (that,msg) {
+        that._worningmsg.innerHTML = msg;
+        that._alertworning.style.display = 'block';
+        that._container.style.backgroundColor = "#666";
+    };
     Main.prototype.getElements = function () {
         this._container = document.getElementById('container');
 
@@ -60,9 +64,36 @@
             // console.log(that._checkRadio(that._tags)); //-1(haven't checked),0,1,2;
             switch (that._checkRadio(that._tags)){
                 case -1:
-                    that._worningmsg.innerHTML = "你需要选择一个分类";
-                    that._alertworning.style.display = 'block';
-                    that._container.style.backgroundColor = "#666";
+                    that.alertFunc(that,"你需要选择一个分类");
+                    break;
+                default:
+                    if(that._title.value){
+                        if(that._context){
+                            new kevinaskin.Ajax({
+                                url: '/api/article-post',
+                                type: 'POST',
+                                data: {
+                                    title:that._title.value,
+                                    texts:that._context.value,
+                                    tagsnumber:that._checkRadio(that._tags)
+                                },
+                                dataType: "json",
+                                success: function (data) {
+                                    this._data = JSON.parse(data);
+                                    if (this._data.code == 0) {
+                                        location.href = '/admin/article-list';
+                                    }
+                                },
+                                fail: function (err) {
+                                    console.error(err);
+                                }
+                            })
+                        }else{
+                            that.alertFunc(that,"请输入文章内容");
+                        }
+                    }else{
+                        that.alertFunc(that,"请输入文章标题");
+                    }
                     break;
             }
         }

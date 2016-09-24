@@ -13,6 +13,14 @@ router.get('/', function (req, res, next) {
     }
 
 });
+router.get('/article-list', function (req, res, next) {
+    if(req.session.currentUser == 'kevinaskin'){
+        res.render('article-list',{title:'Welcome Kevinaskin'});
+    }else{
+        res.redirect('/');
+    }
+
+});
 router.get('/msgbox-list', function (req, res, next) {
     if(req.session.currentUser == 'kevinaskin'){
         res.render('msgbox-list',{title:'Welcome Kevinaskin'});

@@ -1,0 +1,51 @@
+::-webkit-scrollbar{width:0px}
+
+#left-body{
+    width:20%;float:left;margin-top: 5.33rem;padding-top: 8rem;
+}
+#mid-body{
+    width:60%;float:left;margin-top: 5.33rem;
+    padding-top: 8rem;
+}
+#right-body{
+    width:20%;float:left;margin-top: 5.33rem;padding-top: 8rem;
+}
+#article-box{
+
+    margin:5rem auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 60vh;
+
+}
+.article-container{
+    border:1px solid #ccc;
+    margin-top:2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    box-shadow: 0 .5rem .7rem rgba(22,22,22,.1);
+}
+.article-container h1 {
+    margin:3rem auto;
+}
+}
+.article-container span{
+    display: block;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-family: Arial;
+    padding:2rem;
+    font-family: "微软雅黑";
+}
+#article-wall{
+    margin-top: 1rem;
+    width: 96%;
+    height:10rem;
+    resize: none;
+    font-family: "Microsoft YaHei UI Light", "楷体";
+    font-size: 1rem;
+    padding:2%;
+    box-shadow: 0 .5rem .7rem rgba(22,22,22,.1);
+}
+

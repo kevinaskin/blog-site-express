@@ -32,6 +32,11 @@ app.use(orm.express("mysql://root:@localhost/kevinaskin", {
             username: String,
             time:String
         });
+        models.article = db.define('article',{
+            title:String,
+            text:String,
+            tags:Number
+        });
         next();
     }
 }));
@@ -56,7 +61,6 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/login', require('./routes/login'));
 app.use('/admin', require('./routes/admin'));
-app.use('/article-post', require('./routes/article-post'));
 app.use('/about', require('./routes/about'));
 app.use('/article',require('./routes/article'));
 app.use('/api',require('./routes/api'));

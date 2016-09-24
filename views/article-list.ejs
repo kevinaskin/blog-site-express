@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="stylesheet" href="/stylesheets/article-list.css">
+    <script src="/javascripts/ajax.js"></script>
+</head>
+<body>
+<div id="container">
+
+    <div id="header">
+        <span onclick="location.href='/'">Kevinaskin.top</span>
+        <a href="/article/piece"> <div class="nav-block">Piece</div></a>
+        <a href="/article/blog"> <div class="nav-block">Blog</div></a>
+        <a href="/article/photo"><div class="nav-block">Photo</div></a>
+        <a href="/about"> <div class="nav-block">About</div></a>
+
+        <div class="nav-login" id="logout">log out</div>
+    </div>
+    <div id="left-body">
+        <a href="/admin">Edit article</a><br>
+        <a href="/admin/article-list">Article list</a><br>
+        <a href="/admin/user-list">User list</a><br>
+        <a href="/admin/msgbox-list">Msgbox list</a><br>
+    </div>
+    <div id="mid-body">
+        <h1>Article-List</h1>
+        <div id="article-box"></div>
+    </div>
+    <div id="right-body"></div>
+</div>
+
+<!--ALERT_WORNING-->
+<div id="alertworning" class="alertbox">
+    <h1 id="exit-worning">_____________________close</h1>
+    <p id="worning-msg"></p>
+</div>
+
+
+<script src="/javascripts/article-list.js"></script>
+</body>
+</html>

@@ -163,7 +163,6 @@
     Main.prototype.init = function () {
         var asciiContainer = document.getElementById("ascii");
         var capturing = false;
-
         camera.init({
             width: 160,
             height: 120,
