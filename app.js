@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var orm = require('orm');
 var session = require('express-session');
 
-const CONFIG = {session_key: 'kevin'};
+const CONFIG = {session_key: 'xxx'};
 
 
 var routes = require('./routes/index');
